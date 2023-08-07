@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@cognigy/extension-tools": "^0.15.1"
+  }
+}

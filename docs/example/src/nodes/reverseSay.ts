@@ -15,18 +15,26 @@ import { createNodeDescriptor, INodeFunctionBaseParams } from "@cognigy/extensio
 export interface IReverseSayParams extends INodeFunctionBaseParams {
 	config: {
 		text: string;
+		nodeId: string;
+		chips: string[];
+		number: number;
+		slider: number;
+		toggle: boolean;
 	};
 }
 
 export const reverseSay = createNodeDescriptor({
-	type: "reverseSay",
-	defaultLabel: "Reverse Say",
+	type: "Virtual Human",
+	defaultLabel: "Virtual Human",
 	fields: [
 		{
 			key: "text",
-			label: "The text you want to reverse.",
+			label: "The text you want your digital human to speak.",
 			type: "cognigyText",
-			defaultValue: "{{input.text}}"
+			defaultValue: "{{input.text}}",
+			params: {
+				required: true
+			}
 		}
 	],
 	preview: {
